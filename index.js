@@ -12,5 +12,35 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+const cappedTutorials = []
+  tutorials.map((tutorial) =>{    
+    const newTitle = tutorial.split(" ") 
+    for(let i = 0; i < newTitle.length; i++) {
+      newTitle[i] = newTitle[i].charAt(0).toUpperCase() + newTitle[i].slice(1);
+    }
+  return cappedTutorials.push(newTitle.join(' '));
+  })
+  return cappedTutorials;
 }
+
+/*  ***I got the test to pass with this double FOR loop until I remembered
+       I had to use a MAP function :-(
+
+function capitalizeFirstLetter (string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+const titleCased = () => {
+  let tutorial = []
+    for (let i = 0; i < tutorials.length; i++) {   
+    const newString = tutorials[i].split(" ");      
+    const newSentence = [];  
+      for(let j = 0; j < newString.length; j++) {       
+        newSentence.push(capitalizeFirstLetter(newString[j])); 
+      }    
+    tutorial.push(newSentence.join(' '))
+  }
+  return tutorial;
+}
+
+*/
